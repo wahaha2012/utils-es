@@ -19,3 +19,7 @@ export const getQueryString = (queryString, searchString) => {
 
   return result;
 };
+
+export default {
+  getQueryString,
+};
