@@ -1,5 +1,8 @@
 const globby = require("globby");
 const rollup = require("rollup");
+const buble = require("@rollup/plugin-buble");
+const resolve = require("@rollup/plugin-node-resolve");
+
 const rollupConfig = globby
   .sync(["**/*.js", "!node_modules", "!build", "!dist"])
   .map((inputFile) => ({
@@ -15,6 +18,7 @@ const rollupConfig = globby
       format: "umd",
       sourcemap: true,
     },
+    plugins: [resolve(), buble()],
   }));
 
 // console.log(rollupConfig);
