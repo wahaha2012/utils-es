@@ -2,3 +2,4 @@ build/
 .eslintignore
 .eslintrc.js
 *.log
+test/
