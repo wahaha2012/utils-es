@@ -23,7 +23,18 @@ const result = getQueryString("key");
 // result=> query value for key
 ```
 
-## For Nodejs
+## - string
+```js
+import { changePosition } from "utils-es/string";
+// import string from "utils-es/string";
+// import { string } from "utils-es";
+
+const result = changePosition("abcdefg", 0, 2, 7); // return "cdefgab"
+// const result = string.changePosition("abcdefg", 0, 2, 7);
+// result=> string position changed
+```
+
+## For Commonjs module
 Use modules in utils-es/dist
 
 files in dist folder are umd modules
