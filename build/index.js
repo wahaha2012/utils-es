@@ -10,6 +10,12 @@ fs.copy("src/", "dist/", (err) => {
   }
 });
 
+fs.copy("package.json", "dist/package.json", (err) => {
+  if (!err) {
+    console.log("copy package.json");
+  }
+});
+
 const rollupConfig = globby.sync(["src/**/*.js"]).map((inputFile) => {
   const fileName = inputFile.replace("src/", "");
   return {
