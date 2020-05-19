@@ -10,18 +10,13 @@ export const thousandsSeparatorFormat = (number) => {
   }
 
   let result = num ? "" : String(num);
-  let arr = [];
 
   if (num) {
-    arr = String(Math.abs(num)).split(".");
-    let str = arr[0];
-    const len = str.length;
-    for (let i = 1; i <= len; i += 1) {
-      if (i % 3 == 0 && i !== len) {
-        str = `${str.substring(0, len - i)},${str.substring(len - i, len)}`;
-      }
-    }
-    arr[0] = str;
+    const reverseString = (str) => str.split("").reverse().join("");
+    const arr = String(Math.abs(num)).split(".");
+    arr[0] = reverseString(arr[0]);
+    arr[0] = arr[0].replace(/(\d{3})/g, "$1,").replace(/,$/, "");
+    arr[0] = reverseString(arr[0]);
     result = arr.join(".");
   }
   return num < 0 ? `-${result}` : result;

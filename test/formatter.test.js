@@ -25,7 +25,12 @@ describe("test formatter module", () => {
     expect(thousandsSeparatorFormat(1234567)).toBe("1,234,567");
   });
 
-  test("test thousandsSeparatorFormat(123456)", () => {
-    expect(thousandsSeparatorFormat(123456)).toBe("123,456");
+  test("test thousandsSeparatorFormat(-123456)", () => {
+    Number.prototype.toLocaleString = null;
+    expect(thousandsSeparatorFormat(-123456)).toBe("-123,456");
+  });
+
+  test("test thousandsSeparatorFormat()", () => {
+    expect(thousandsSeparatorFormat()).toBe("NaN");
   });
 });

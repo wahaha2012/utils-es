@@ -2,6 +2,10 @@
 javascript util functions with ES syntax
 
 ## - formatter
+> ### thousandsSeparatorFormat(n)
+* @description Thousands Separator Formatter
+* @param {Number | String} n
+* @return { String }
 ```js
 import { thousandsSeparatorFormat } from "utils-es/formatter";
 // import formatter from "utils-es/formatter";
@@ -13,6 +17,11 @@ const result = thousandsSeparatorFormat(-123456.78);
 ```
 
 ## - url
+> ### getQueryString(queryKey, searchString)
+* @method getQueryString
+* @param queryString {String}
+* @param searchString {String}
+* @return {String}
 ```js
 import { getQueryString } from "utils-es/url";
 // import url from "utils-es/url";
@@ -21,9 +30,18 @@ import { getQueryString } from "utils-es/url";
 const result = getQueryString("key");
 // const result = url.getQueryString("key");
 // result=> query value for key
+
+const result = getQueryString("key", "https://localhost/?key=value");
+// result => "value"
 ```
 
 ## - string
+> ### changePosition(souce, startPosition, length, targetPosition)
+* @description move a part from string to another position
+* @param {String | Number} source source content
+* @param {Integer} startPosition move start position
+* @param {Integer} length move length
+* @param {Integer} targetPosition target position to put
 ```js
 import { changePosition } from "utils-es/string";
 // import string from "utils-es/string";

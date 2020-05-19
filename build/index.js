@@ -4,17 +4,25 @@ const buble = require("@rollup/plugin-buble");
 const resolve = require("@rollup/plugin-node-resolve");
 const fs = require("fs-extra");
 
-fs.copy("src/", "dist/", (err) => {
-  if (!err) {
-    console.log("copy files from src/ to dist/");
-  }
-});
+const copy = (file, dist = "dist/") => {
+  return fs.copy(
+    file,
+    /(\.\w+)|(LICENSE)$/.test(file) ? `${dist}${file}` : dist
+  );
+};
 
-fs.copy("package.json", "dist/package.json", (err) => {
-  if (!err) {
-    console.log("copy package.json");
-  }
-});
+Promise.all([
+  copy("src/"),
+  copy("package.json"),
+  copy("README.md"),
+  copy("LICENSE"),
+])
+  .then(() => {
+    console.log("copy publish files");
+  })
+  .catch((err) => {
+    throw new Error(err);
+  });
 
 const rollupConfig = globby.sync(["src/**/*.js"]).map((inputFile) => {
   const fileName = inputFile.replace("src/", "");
