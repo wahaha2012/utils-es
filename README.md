@@ -1,5 +1,6 @@
 # utils-es
-[![NPM version](https://badge.fury.io/js/utils-es.svg)](http://badge.fury.io/js/utils-es)
+<!-- [![NPM version](https://badge.fury.io/js/utils-es.svg)](http://badge.fury.io/js/utils-es) -->
+[![NPM version](https://img.shields.io/npm/v/utils-es.svg)](https://www.npmjs.com/package/utils-es)
 [![Downloads/month](https://img.shields.io/npm/dm/utils-es.svg)](http://www.npmtrends.com/utils-es)
 [![Build Status](https://travis-ci.org/wahaha2012/utils-es.svg)](https://travis-ci.org/wahaha2012/utils-es)
 [![Coverage Status](https://codecov.io/gh/wahaha2012/utils-es/branch/master/graph/badge.svg)](https://codecov.io/gh/wahaha2012/utils-es)
