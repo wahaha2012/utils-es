@@ -1,6 +1,6 @@
 {
   "name": "utils-es",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "javascript util functions with ES syntax",
   "main": "index.js",
   "scripts": {
