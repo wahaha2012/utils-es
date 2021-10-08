@@ -8,14 +8,30 @@
 
 javascript util functions with ES syntax
 
+Table of Contents
+=================
+  * [Usage](#usage)
+  * [- formatter](#--formatter)
+    * [thousandsSeparatorFormat(n)](#thousandsseparatorformatn)
+  * [- url](#--url)
+    * [getQueryString(queryKey, searchString)](#getquerystringquerykey-searchstring)
+    * [paramsToQueryString(params)](#paramstoquerystringparams)
+  * [- string](#--string)
+    * [changePosition(souce, startPosition, length, targetPosition)](#changepositionsouce-startposition-length-targetposition)
+  * [- dom](#--dom)
+  * [- event](#--event)
+  * [- queue](#--queue)
+  * [- safe](#--safe)
+  * [- transform](#--transform)
+  * [- lang](#--lang)
+  * [For Commonjs module](#for-commonjs-module)
+  
 ## Usage
 ```bash
 npm install utils-es
 # or
 yarn add utils-es
 ```
-
-[TOC]
 
 ## - formatter
 > ### thousandsSeparatorFormat(n)
