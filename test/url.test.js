@@ -1,6 +1,6 @@
 import utils from "../src/";
 import url from "../src/url";
-import { getQueryString } from "../src/url";
+import { getQueryString, paramsToQueryString } from "../src/url";
 
 describe("test url module", () => {
   test("test getQueryString()", () => {
@@ -15,5 +15,17 @@ describe("test url module", () => {
 
   test("test getQueryString('key', '?key=value')", () => {
     expect(getQueryString("key", "?key=value")).toBe("value");
+  });
+
+  test("test paramsToQueryString()", () => {
+    expect(paramsToQueryString()).toBe("");
+    expect(url.paramsToQueryString([])).toBe("");
+    expect(utils.url.paramsToQueryString({})).toBe("");
+  });
+
+  test("test paramsToQueryString({name: 'tom', age: 16, gender: undefined})", () => {
+    expect(
+      paramsToQueryString({ name: "tom", age: 16, gender: undefined })
+    ).toBe("name=tom&age=16");
   });
 });

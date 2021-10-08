@@ -26,6 +26,10 @@ export const getQueryString = (queryString, searchString) => {
  * @return { String } query string
  */
 export const paramsToQueryString = (params) => {
+  if (Object.prototype.toString.call(params) !== "[object Object]") {
+    return "";
+  }
+
   const queryArr = [];
   Object.entries(params).forEach(([k, v]) => {
     if (typeof v === "undefined") {

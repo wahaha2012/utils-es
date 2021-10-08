@@ -4,9 +4,11 @@
  * @returns {String} html safe content
  */
 export const xssFilter = (source) => {
-  return source
-    .replace(/<script.*?>/g, "&lt;script&gt;")
-    .replace(/<\/.*?script>/g, "&lt;/script&gt;");
+  return typeof source === "string"
+    ? source
+        .replace(/<script.*?>/g, "&lt;script&gt;")
+        .replace(/<\/.*?script>/g, "&lt;/script&gt;")
+    : source;
 };
 
 export default {

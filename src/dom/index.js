@@ -47,15 +47,17 @@ export const addClass = (element, className) => {
     return element;
   }
 
-  const oldClassNameList = element
-    .getAttribute("class")
+  const oldClassNameList = (element.getAttribute("class") || "")
     .split(" ")
     .filter((v) => v);
-  classNameList.forEach((item) => {
-    if (oldClassNameList.indexOf(item) === -1) {
-      oldClassNameList.push(item);
-    }
-  });
+
+  classNameList
+    .filter((v) => v)
+    .forEach((item) => {
+      if (oldClassNameList.indexOf(item) === -1) {
+        oldClassNameList.push(item);
+      }
+    });
 
   element.setAttribute("class", oldClassNameList.join(" "));
   return element;

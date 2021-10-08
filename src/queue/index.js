@@ -11,11 +11,14 @@ export function debounce(func, wait, immediate) {
     var context = this,
       args = arguments;
     clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    }, wait);
-    if (immediate && !timeout) func.apply(context, args);
+    if (!immediate) {
+      timeout = setTimeout(function () {
+        timeout = null;
+        func.apply(context, args);
+      }, wait);
+    } else {
+      func.apply(context, args);
+    }
   };
 }
 
