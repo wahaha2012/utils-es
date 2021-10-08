@@ -15,6 +15,8 @@ npm install utils-es
 yarn add utils-es
 ```
 
+[TOC]
+
 ## - formatter
 > ### thousandsSeparatorFormat(n)
 * @description Thousands Separator Formatter
@@ -160,6 +162,18 @@ data2Set(); // return Set(0)
 data2Set(1); // return Set(1) {1}
 data2Set("foo"); // return Set(1) {"foo"}
 data2Set([1,2,3]); // return Set(3) {1,2,3}
+```
+
+## - lang
+> isType(source, type)
+* check varible type
+* @param {Any} source
+* @param {String} type
+* @return {String | Boolean}
+```js
+import { isType } from "utils-es/lang";
+isType(1); // return "Number"
+isType(1, "Number"); // return true
 ```
 
 ## For Commonjs module
