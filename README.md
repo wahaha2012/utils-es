@@ -167,6 +167,22 @@ const safeInnerHTML = xssFilter(originalHTMLString));
 // replace all script tag to &lt;script&gt;
 ```
 
+> htmlSafe(source)
+* html source safe encode
+* @param {String} source raw html content
+* @returns safe html
+```js
+import { htmlSafe } from "utils-es/safe";
+const safeInnerHTML = htmlSafe(originalHTMLString));
+
+// html safe encode will replace below characters
+// replace(/&/g, "&amp;")
+// replace(/>/g, "&gt;")
+// replace(/</g, "&lt;")
+// replace(/"/g, "&quot;")
+// replace(/'/g, "&#39;")
+```
+
 ## - transform
 > data2Set(source)
 * data2Set transform data to Set Object

@@ -14,3 +14,19 @@ export const xssFilter = (source) => {
 export default {
   xssFilter,
 };
+
+/**
+ * safe inner html
+ * @param {String} source raw html content
+ * @returns safe html
+ */
+export const htmlSafe = (source) => {
+  return typeof source === "string"
+    ? source
+        .replace(/&/g, "&amp;")
+        .replace(/>/g, "&gt;")
+        .replace(/</g, "&lt;")
+        .replace(/"/g, "&quot;")
+        .replace("'", "&#39;")
+    : String(source);
+};
