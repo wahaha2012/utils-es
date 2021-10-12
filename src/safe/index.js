@@ -27,6 +27,6 @@ export const htmlSafe = (source) => {
         .replace(/>/g, "&gt;")
         .replace(/</g, "&lt;")
         .replace(/"/g, "&quot;")
-        .replace("'", "&#39;")
+        .replace(/'/g, "&#39;")
     : String(source);
 };
